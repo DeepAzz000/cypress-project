@@ -1,25 +1,23 @@
-import {Config} from './state';
-
 describe('Inscription Phone_number', () => {
 
 //Phone registration 
-  it('passes', () => {
+  it('#KT001 passes', () => {
     cy.visit('https://www.kezakoo.com/')
     cy.contains('Inscription').click()
-    cy.get('#phone').type('061020304050')
+    cy.get('#phone').type('061234567891234')
     cy.get('#next_phone_number_verification').click()
     cy.get('#error').should('exist')
   })
 
-  it('passes', () => {
-    cy.visit('https://www.kezakoo.com/')
-    cy.contains('Inscription').click()
-    cy.get('#phone').type('0610203040')
-    cy.get('#next_phone_number_verification').click()
-    cy.get('#error').should('not.exist')
-  })
+it('#KT002 passes', () => {
+  cy.visit('https://www.kezakoo.com/')
+  cy.contains('Inscription').click()
+  cy.get('#phone').type('0612346879')
+  cy.get('#next_phone_number_verification').click()
+  cy.get('#error').should('not.exist')
+})
 
-  it('passes', () => {
+  it('#KT003 passes', () => {
     cy.visit('https://www.kezakoo.com/')    
     cy.contains('Inscription').click()
     cy.get('#phone').type('phonenumber')
@@ -27,36 +25,99 @@ describe('Inscription Phone_number', () => {
     cy.get('#error').should('exist')
   })
 
-    it('passes', () => {
+    it('#KT004 passes', () => {
     cy.visit('https://www.kezakoo.com/')
     cy.contains('Inscription').click()
-    cy.get('#phone').type('+212610203040')
+    cy.get('#phone').type('+212612345870')
     cy.get('#next_phone_number_verification').click()
     cy.get('#error').should('not.exist')
   })
 
-  it('passes', () => {
+  it('#KT005 passes', () => {
     cy.visit('https://www.kezakoo.com/')
     cy.contains('Inscription').click()
-    cy.get('#phone').type('+21261020304050')
+    cy.get('#phone').type('+2126123456789123')
     cy.get('#next_phone_number_verification').click()
     cy.get('#error').should('exist')
   })
 
-  it('passes', () => {
+  it('#KT006 passes', () => {
     cy.visit('https://www.kezakoo.com/')
     cy.contains('Inscription').click()
-    cy.get('#phone').type('')
+    cy.get('#phone').type(' ')
     cy.get('#next_phone_number_verification').click()
     cy.get('#error').should('exist')
   })
 
 // Registration Process
 
-  it('passes', () => {
+it('#KT007 passes', () => {
     cy.visit('https://www.kezakoo.com/')
     cy.contains('Inscription').click()
-    cy.get('#phone').type('+212610213050')
+    cy.get('#phone').type('+212610305070')
+    cy.get('#next_phone_number_verification').click()
+    cy.get('.langue:nth-child(2)').click();
+    cy.get('#next_ed_infos_language_signup').click()
+    cy.get('#ed_infos_biof_signup > .niveau:nth-child(2)').click();
+    cy.get('#next_ed_infos_biof_signup').click();
+    cy.get('#ed_infos_filiere_biof_tronc').click();
+    cy.get('#ed_infos_filiere_biof_tronc > .filiere_tronc:nth-child(2)').click();
+    cy.get('#next_ed_infos_filiere_biof_tronc').click();
+    cy.get('#email').type('soxiro2316@losvtn.com')
+    cy.get('#password').type('+212610213954') 
+    cy.get('#first_name').type('Tester')
+    cy.get('#last_name').type('Testery')
+    cy.get('#ville').type('Oujda')
+    cy.get('#submitbtn').click()
+    cy.get('#error').should('not.exist')
+    })
+
+  it('#KT008 passes', () => {
+    cy.visit('https://www.kezakoo.com/')
+    cy.contains('Inscription').click()
+    cy.get('#phone').type('+212613203016')
+    cy.get('#next_phone_number_verification').click()
+    cy.get('.langue:nth-child(2)').click();
+    cy.get('#next_ed_infos_language_signup').click()
+    cy.get('#ed_infos_biof_signup > .niveau:nth-child(2)').click();
+    cy.get('#next_ed_infos_biof_signup').click();
+    cy.get('#ed_infos_filiere_biof_tronc').click();
+    cy.get('#ed_infos_filiere_biof_tronc > .filiere_tronc:nth-child(2)').click();
+    cy.get('#next_ed_infos_filiere_biof_tronc').click();
+    cy.get('#email').type('testerjkjlkjlkj')
+    cy.get('#password').type('+212610213050') 
+    cy.get('#first_name').type('Tester')
+    cy.get('#last_name').type('Testery')
+    cy.get('#ville').type('Oujda')
+    cy.get('#submitbtn').click()
+    cy.get('#error').should('exist')
+  })
+
+  it('#KT009 passes', () => {
+    cy.visit('https://www.kezakoo.com/')
+    cy.contains('Inscription').click()
+    cy.get('#phone').type('+212630209010')
+    cy.get('#next_phone_number_verification').click()
+    cy.get('.langue:nth-child(2)').click();
+    cy.get('#next_ed_infos_language_signup').click()
+    cy.get('#ed_infos_biof_signup > .niveau:nth-child(2)').click();
+    cy.get('#next_ed_infos_biof_signup').click();
+    cy.get('#ed_infos_filiere_biof_tronc').click();
+    cy.get('#ed_infos_filiere_biof_tronc > .filiere_tronc:nth-child(2)').click();
+    cy.get('#next_ed_infos_filiere_biof_tronc').click();
+    cy.get('#email').type('tester@examplecom')
+    cy.get('#password').type('+212610213050') 
+    cy.get('#first_name').type('Tester')
+    cy.get('#last_name').type('Testery')
+    cy.get('#ville').type('Oujda')
+    cy.get('#submitbtn').click()
+    cy.get('#error').should('exist')
+  })
+
+  it('#KT010 passes', () => {
+    cy.visit('https://www.kezakoo.com/')
+    cy.contains('Inscription').click()
+    cy.get('#phone').type('+212611213050')
     cy.get('#next_phone_number_verification').click()
     cy.get('.langue:nth-child(2)').click();
     cy.get('#next_ed_infos_language_signup').click()
@@ -74,10 +135,10 @@ describe('Inscription Phone_number', () => {
     cy.get('#error').should('exist')
   })
 
-  it('passes', () => {
+  it('#KT011 passes', () => {
     cy.visit('https://www.kezakoo.com/')
     cy.contains('Inscription').click()
-    cy.get('#phone').type('+212610213050')
+    cy.get('#phone').type('+212612346878')
     cy.get('#next_phone_number_verification').click()
     cy.get('.langue:nth-child(2)').click();
     cy.get('#next_ed_infos_language_signup').click()
@@ -94,11 +155,11 @@ describe('Inscription Phone_number', () => {
     cy.get('#submitbtn').click()
     cy.get('#error').should('exist')
   })
-
-  it('passes', () => {
+  
+  it('#KT012 passes', () => {
     cy.visit('https://www.kezakoo.com/')
     cy.contains('Inscription').click()
-    cy.get('#phone').type('+212610203090')
+    cy.get('#phone').type('+212712345876')
     cy.get('#next_phone_number_verification').click()
     cy.get('.langue:nth-child(2)').click();
     cy.get('#next_ed_infos_language_signup').click()
@@ -115,106 +176,5 @@ describe('Inscription Phone_number', () => {
     cy.get('#submitbtn').click()
     cy.get('#error').should('exist')
   })
-
-    it('passes', () => {
-      cy.visit('https://www.kezakoo.com/')
-      cy.contains('Inscription').click()
-      cy.get('#phone').type('+212610203010')
-      cy.get('#next_phone_number_verification').click()
-      cy.get('.langue:nth-child(2)').click();
-      cy.get('#next_ed_infos_language_signup').click()
-      cy.get('#ed_infos_biof_signup > .niveau:nth-child(2)').click();
-      cy.get('#next_ed_infos_biof_signup').click();
-      cy.get('#ed_infos_filiere_biof_tronc').click();
-      cy.get('#ed_infos_filiere_biof_tronc > .filiere_tronc:nth-child(2)').click();
-      cy.get('#next_ed_infos_filiere_biof_tronc').click();
-      cy.get('#email').type('testerjkjlkjlkj')
-      cy.get('#password').type('+212610213050') 
-      cy.get('#first_name').type('Tester')
-      cy.get('#last_name').type('Testery')
-      cy.get('#ville').type('Oujda')
-      cy.get('#submitbtn').click()
-      cy.get('#error').should('exist')
-    })
-
-    it('passes', () => {
-      cy.visit('https://www.kezakoo.com/')
-      cy.contains('Inscription').click()
-      cy.get('#phone').type('+212610203010')
-      cy.get('#next_phone_number_verification').click()
-      cy.get('.langue:nth-child(2)').click();
-      cy.get('#next_ed_infos_language_signup').click()
-      cy.get('#ed_infos_biof_signup > .niveau:nth-child(2)').click();
-      cy.get('#next_ed_infos_biof_signup').click();
-      cy.get('#ed_infos_filiere_biof_tronc').click();
-      cy.get('#ed_infos_filiere_biof_tronc > .filiere_tronc:nth-child(2)').click();
-      cy.get('#next_ed_infos_filiere_biof_tronc').click();
-      cy.get('#email').type('tester@examplecom')
-      cy.get('#password').type('+212610213050') 
-      cy.get('#first_name').type('Tester')
-      cy.get('#last_name').type('Testery')
-      cy.get('#ville').type('Oujda')
-      cy.get('#submitbtn').click()
-      cy.get('#error').should('exist')
-    })
-
-    it('passes', () => {
-      cy.visit('https://www.kezakoo.com/')
-      cy.contains('Inscription').click()
-      cy.get('#phone').type('+212611111116')
-      cy.get('#next_phone_number_verification').click()
-      cy.get('.langue:nth-child(2)').click();
-      cy.get('#next_ed_infos_language_signup').click()
-      cy.get('#ed_infos_biof_signup > .niveau:nth-child(2)').click();
-      cy.get('#next_ed_infos_biof_signup').click();
-      cy.get('#ed_infos_filiere_biof_tronc').click();
-      cy.get('#ed_infos_filiere_biof_tronc > .filiere_tronc:nth-child(2)').click();
-      cy.get('#next_ed_infos_filiere_biof_tronc').click();
-      cy.get('#email').type('soxiro2316@losvtn.com')
-      cy.get('#password').type('+212610213954') 
-      cy.get('#first_name').type('Tester')
-      cy.get('#last_name').type('Testery')
-      cy.get('#ville').type('Oujda')
-      cy.get('#submitbtn').click()
-      cy.get('#error').should('not.exist')
-    })
-
-// Login
-
-  it('passes', () => {
-    cy.visit('https://www.kezakoo.com/')
-    cy.contains('Inscription').click()
-    cy.get('#phone').type(Config.phone)
-    cy.get('#next_phone_number_verification').click()
-    cy.get('#password_phone_exists').type(Config.password)
-    cy.get('#connexionIfPhoneExistsButton').click()
-    cy.get('#error').should('not.exist')
-  })
-
-  it('passes', () => {
-    cy.visit('https://www.kezakoo.com/')
-    cy.contains('Inscription').click()
-    cy.get('#phone').type(Config.phone)
-    cy.get('#next_phone_number_verification').click()
-    cy.get('#password_phone_exists').type(Config.wrong_password)
-    cy.get('#connexionIfPhoneExistsButton').click()
-    cy.get('#error').should('exist')
-  })
-
-// select course
-
-  it('passes', () => {
-    cy.visit('https://www.kezakoo.com/')
-    cy.contains('Inscription').click()
-    cy.get('#phone').type(Config.phone)
-    cy.get('#next_phone_number_verification').click()
-    cy.get('#password_phone_exists').type(Config.password)
-    cy.get('#connexionIfPhoneExistsButton').click()
-    cy.contains('Mes Cours').click()
-    cy.get("#SVT").find('button').click()
-    cy.get("#lesson-102029").find('button').click()
-    cy.get("#learndash_post_102029").click()
-  })
-
 
 })

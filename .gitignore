@@ -202,7 +202,7 @@ cypress.config.js
 support
 fixtures
 *.json
-*.js
+state.js
 *node_modules
 node_modules
 # End of https://www.toptal.com/developers/gitignore/api/python,visualstudiocode
